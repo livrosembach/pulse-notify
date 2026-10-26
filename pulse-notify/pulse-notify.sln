@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pulse-notify", "pulse-notify\pulse-notify.csproj", "{0EB75FD3-90A9-4901-B340-09E6F77304C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EB75FD3-90A9-4901-B340-09E6F77304C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB75FD3-90A9-4901-B340-09E6F77304C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB75FD3-90A9-4901-B340-09E6F77304C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB75FD3-90A9-4901-B340-09E6F77304C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
