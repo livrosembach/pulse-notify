@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("pulse-notify")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f79406f9b8cbebdb804ec6cc9c52088460e67ed9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6f24c1000477568adad80476448d3d7759fd861")]
 [assembly: System.Reflection.AssemblyProductAttribute("pulse-notify")]
 [assembly: System.Reflection.AssemblyTitleAttribute("pulse-notify")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,12 @@
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/bin/Debug/net10.0/pulse-notify.deps.json
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/bin/Debug/net10.0/pulse-notify.dll
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/bin/Debug/net10.0/pulse-notify.pdb
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Debug/net10.0/pulse-notify.GeneratedMSBuildEditorConfig.editorconfig
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Debug/net10.0/pulse-notify.AssemblyInfoInputs.cache
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Debug/net10.0/pulse-notify.AssemblyInfo.cs
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Debug/net10.0/pulse-notify.csproj.CoreCompileInputs.cache
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Debug/net10.0/pulse-notify.sourcelink.json
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Debug/net10.0/pulse-notify.dll
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Debug/net10.0/refint/pulse-notify.dll
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Debug/net10.0/pulse-notify.pdb
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Debug/net10.0/ref/pulse-notify.dll
