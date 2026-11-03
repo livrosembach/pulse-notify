@@ -1,8 +1,9 @@
-namespace pulse_notify.Models;
+namespace NotifyKit.Models;
 
 public enum NotificationPriority
 {
     Low,
     Normal,
-    High
+    High,
+    Critical
 }

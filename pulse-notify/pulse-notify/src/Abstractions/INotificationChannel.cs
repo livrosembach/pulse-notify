@@ -1,6 +1,6 @@
-using pulse_notify.Models;
+using NotifyKit.Models;
 
-namespace pulse_notify.Abstractions;
+namespace NotifyKit.Abstractions;
 
 public interface INotificationChannel
 {

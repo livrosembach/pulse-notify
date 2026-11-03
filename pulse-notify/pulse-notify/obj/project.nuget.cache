@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Rh1LsXK6P+8=",
+  "dgSpecHash": "oYoBuP5e6UY=",
   "success": true,
   "projectFilePath": "/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/pulse-notify.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/liviarosembacholiveira/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "/Users/liviarosembacholiveira/.nuget/packages/microsoft.netcore.app.ref/8.0.33/microsoft.netcore.app.ref.8.0.33.nupkg.sha512",
+    "/Users/liviarosembacholiveira/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.33/microsoft.aspnetcore.app.ref.8.0.33.nupkg.sha512"
+  ],
   "logs": []
 }

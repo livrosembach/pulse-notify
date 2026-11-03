@@ -1,8 +1,9 @@
-namespace pulse_notify.Models;
+namespace NotifyKit.Models;
 
-public class NotificationResult
+public sealed record NotificationResult(
+    bool Success, string Channel, string Recipient, DateTimeOffset CompletedAt,
+    string? ErrorMessage = null, int Attempts = 1)
 {
-    private bool Success;
-    private string Channel;
-    private string? ErrorMessage = null;
+    public static NotificationResult Succeeded(Notification n, int attempts = 1) => new(true, n.Channel, n.Recipient, DateTimeOffset.UtcNow, null, attempts);
+    public static NotificationResult Failed(Notification n, string error, int attempts = 1) => new(false, n.Channel, n.Recipient, DateTimeOffset.UtcNow, error, attempts);
 }
