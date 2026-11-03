@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NotifyKit</name>
+    </assembly>
+    <members>
+        <member name="T:NotifyKit.Builders.NotificationBuilder">
+            <summary>
+            Fluent Builder that assembles an immutable notification.
+            </summary>
+        </member>
+    </members>
+</doc>

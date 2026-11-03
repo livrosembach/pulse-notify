@@ -1,0 +1,15 @@
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/bin/Release/net8.0/NotifyKit.deps.json
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/bin/Release/net8.0/NotifyKit.dll
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/bin/Release/net8.0/NotifyKit.pdb
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/bin/Release/net8.0/NotifyKit.xml
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Release/net8.0/pulse-notify.csproj.AssemblyReference.cache
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Release/net8.0/pulse-notify.GeneratedMSBuildEditorConfig.editorconfig
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Release/net8.0/pulse-notify.AssemblyInfoInputs.cache
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Release/net8.0/pulse-notify.AssemblyInfo.cs
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Release/net8.0/pulse-notify.csproj.CoreCompileInputs.cache
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Release/net8.0/pulse-notify.sourcelink.json
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Release/net8.0/NotifyKit.dll
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Release/net8.0/refint/NotifyKit.dll
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Release/net8.0/NotifyKit.xml
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Release/net8.0/NotifyKit.pdb
+/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/obj/Release/net8.0/ref/NotifyKit.dll

@@ -13,7 +13,7 @@ O núcleo é dividido por responsabilidade:
 
 | Namespace | Responsabilidade | Extensão |
 |---|---|---|
-| `NotifyKit.Models` | `Notification`, prioridade e resultado | Builder de notificação |
+| `NotifyKit.Models` / `NotifyKit.Builders` | `Notification`, `NotificationBuilder`, prioridade e resultado | Builder de notificação |
 | `NotifyKit.Abstractions` | contratos de canais, handlers, observers e backoff | interfaces implementáveis pelo cliente |
 | `NotifyKit.Channels` | canais simulados e `ChannelRegistry` | novo canal sem editar a lib |
 | `NotifyKit.Handlers` | cadeia de pré-processamento | novo handler |
@@ -51,7 +51,7 @@ classDiagram
 
 ## Os seis padrões
 
-### 1. Builder — `Notification`
+### 1. Builder — `NotificationBuilder`
 
 Resolve a construção de um objeto com muitos campos opcionais sem construtor
 telescópico ou estado mutável exposto. É adequado porque a chamada fica legível e
@@ -224,14 +224,14 @@ pulse-notify.sln
         └── DependencyInjection/
 ```
 
-API pública principal: `Notifier`, `Notification`, `NotificationResult`,
+API pública principal: `Notifier`, `Notification`, `NotificationBuilder`, `NotificationResult`,
 `INotificationChannel`, `INotificationHandler`, `INotificationObserver`,
 `IRetryBackoffPolicy`, `ChannelRegistry` e `AddNotifyKit`.
 
 ## Plano de trabalho
 
 **Parcial — 04/11, 30% (implementar nesta noite):** concluir os modelos,
-Builder, `INotificationChannel`, quatro canais simulados, `ChannelRegistry`,
+`NotificationBuilder`, `INotificationChannel`, quatro canais simulados, `ChannelRegistry`,
 `Notifier`, `ValidationHandler`, `NotificationCommand`, observer em memória e
 `AddNotifyKit`. Mostrar no vídeo: um envio Console e um Email, o diagrama de
 classes e a defesa Builder + Strategy/Command. O retry pode ser demonstrado
@@ -249,7 +249,7 @@ isoladamente com `RetryDecorator` e backoff de atraso mínimo.
 ## Roteiro do vídeo (2–3 minutos por aluno)
 
 **Aluno 1 — Builder + Strategy:** apresentar o problema do construtor telescópico
-e mostrar `Notification.Builder`; depois explicar que `INotificationChannel`
+e mostrar `NotificationBuilder`; depois explicar que `INotificationChannel`
 representa algoritmos de transporte e que `IRetryBackoffPolicy` troca a política
 sem alterar o retry. Enfatizar OCP e a diferença entre escolher algoritmo e
 adicionar comportamento.
