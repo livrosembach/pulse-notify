@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Extensible notification library with channels, retry, scheduling and observers.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("0.1.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.0+97261395cb0c38f27b0eabcbe26437eee168f955")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.0+a15bcae5254b664dd41447619e06dfce3e52bacd")]
 [assembly: System.Reflection.AssemblyProductAttribute("NotifyKit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NotifyKit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.1.0.0")]

@@ -1,1 +1,0 @@
-Strategy — canais de envio

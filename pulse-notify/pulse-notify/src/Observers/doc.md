@@ -1,1 +1,0 @@
-Observer — eventos de envio

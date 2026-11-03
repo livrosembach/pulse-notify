@@ -1,1 +1,0 @@
-Decorator — retry e logging

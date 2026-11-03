@@ -14,6 +14,7 @@ O núcleo é dividido por responsabilidade:
 | Namespace | Responsabilidade | Extensão |
 |---|---|---|
 | `NotifyKit.Models` / `NotifyKit.Builders` | `Notification`, `NotificationBuilder`, prioridade e resultado | Builder de notificação |
+| `NotifyKit.Factories` | criação dos canais padrão | novos canais via DI, sem editar a factory |
 | `NotifyKit.Abstractions` | contratos de canais, handlers, observers e backoff | interfaces implementáveis pelo cliente |
 | `NotifyKit.Channels` | canais simulados e `ChannelRegistry` | novo canal sem editar a lib |
 | `NotifyKit.Handlers` | cadeia de pré-processamento | novo handler |
@@ -29,6 +30,8 @@ classDiagram
     class INotificationHandler { <<interface>> +HandleAsync() }
     class NotificationCommand { +ExecuteAsync() }
     class ChannelRegistry { +Get(name) }
+    class INotificationChannelFactory { <<interface>> +Create(name) }
+    class NotificationChannelFactory
     class INotificationChannel { <<interface>> +Name +SendAsync() }
     class NotificationChannelDecorator { <<abstract>> }
     class RetryDecorator
@@ -41,6 +44,8 @@ classDiagram
     NotificationHandlerChain o--> INotificationHandler
     NotificationCommand --> ChannelRegistry
     ChannelRegistry o--> INotificationChannel
+    NotificationChannelFactory ..|> INotificationChannelFactory
+    NotificationChannelFactory ..> INotificationChannel
     NotificationChannelDecorator ..|> INotificationChannel
     RetryDecorator --|> NotificationChannelDecorator
     LoggingDecorator --|> NotificationChannelDecorator
@@ -226,7 +231,23 @@ pulse-notify.sln
 
 API pública principal: `Notifier`, `Notification`, `NotificationBuilder`, `NotificationResult`,
 `INotificationChannel`, `INotificationHandler`, `INotificationObserver`,
-`IRetryBackoffPolicy`, `ChannelRegistry` e `AddNotifyKit`.
+`IRetryBackoffPolicy`, `ChannelRegistry`, `INotificationChannelFactory`,
+`NotificationChannelFactory` e `AddNotifyKit`.
+
+### Factory de canais (apoio)
+
+`NotificationChannelFactory` é um apoio arquitetural, não um dos seis padrões
+avaliados. Ela centraliza a criação dos quatro canais simulados prontos para uso.
+Isso evita `new EmailChannel()` espalhado na composição do DI. Ela não deve ser
+alterada para cada extensão: canais do cliente são registrados diretamente:
+
+```csharp
+services.AddSingleton<INotificationChannel, TelegramChannel>();
+```
+
+Assim, a Factory resolve a criação dos defaults e o `ChannelRegistry` resolve
+o canal pelo nome; Strategy continua sendo o padrão responsável pelo algoritmo
+de envio.
 
 ## Plano de trabalho
 

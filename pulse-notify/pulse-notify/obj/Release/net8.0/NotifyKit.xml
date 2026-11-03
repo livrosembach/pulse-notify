@@ -9,5 +9,16 @@
             Fluent Builder that assembles an immutable notification.
             </summary>
         </member>
+        <member name="T:NotifyKit.Factories.INotificationChannelFactory">
+            <summary>
+            Creates the channels supplied by NotifyKit out of the box.
+            </summary>
+        </member>
+        <member name="T:NotifyKit.Factories.NotificationChannelFactory">
+            <summary>
+            Factory Method for the standard simulated channels.
+            Custom channels should be registered directly with dependency injection.
+            </summary>
+        </member>
     </members>
 </doc>
