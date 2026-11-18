@@ -4,9 +4,24 @@ namespace NotifyKit.Models;
 
 public sealed record Notification
 {
-    internal Notification(string recipient, string channel, string? subject, string message,
-        NotificationPriority priority, DateTimeOffset? scheduledAt, string? templateName)
-    { Recipient = recipient; Channel = channel; Subject = subject; Message = message; Priority = priority; ScheduledAt = scheduledAt; TemplateName = templateName; }
+    internal Notification(
+        string recipient,
+        string channel,
+        string? subject,
+        string message,
+        NotificationPriority priority,
+        DateTimeOffset? scheduledAt,
+        string? templateName)
+    {
+        Recipient = recipient;
+        Channel = channel;
+        Subject = subject;
+        Message = message;
+        Priority = priority;
+        ScheduledAt = scheduledAt;
+        TemplateName = templateName;
+    }
+
     public string Recipient { get; }
     public string Channel { get; }
     public string? Subject { get; }
@@ -14,6 +29,7 @@ public sealed record Notification
     public NotificationPriority Priority { get; }
     public DateTimeOffset? ScheduledAt { get; }
     public string? TemplateName { get; }
+
     public static NotificationBuilder Email(string recipient) => new(recipient, "email");
     public static NotificationBuilder Sms(string recipient) => new(recipient, "sms");
     public static NotificationBuilder Push(string recipient) => new(recipient, "push");
