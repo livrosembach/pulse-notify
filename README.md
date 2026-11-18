@@ -4,8 +4,31 @@ Biblioteca C#/.NET 8 para envio de notificações por múltiplos canais, distrib
 pacote NuGet ou `ProjectReference`. Ela não é uma API nem uma aplicação executável:
 o consumidor importa a biblioteca e injeta `Notifier`.
 
-> **Entrega acadêmica:** Aluno 1 — `[nome]`; Aluno 2 — `[nome]`; Aluno 3 — `[nome]`.
-> Vídeo: `[link do YouTube]`.
+> **Entrega acadêmica:** 
+> Alexandre Andrioli Tucci; 
+> Livia Rosembach Oliveira;
+> Lucas Zanlorenzi Brisch.
+> 
+> Vídeo: https://youtu.be/1XxT-GpjoQ8.
+
+### O que é o NotifyKit?
+
+O NotifyKit é uma **biblioteca .NET 8**, distribuída como DLL/NuGet, que
+oferece uma interface única para enviar notificações por diferentes canais:
+e-mail, SMS, push e console. O consumidor não precisa conhecer os detalhes de
+cada canal; ele cria uma `Notification`, injeta o `Notifier` e chama
+`SendAsync`.
+
+### Qual problema o projeto resolve?
+
+Sem uma biblioteca, a aplicação cliente precisaria ter vários `if`/`switch`
+para decidir o canal, regras de retry misturadas ao transporte, validação
+acoplada ao envio e código de histórico espalhado. Isso gera alto acoplamento e
+torna qualquer mudança arriscada.
+
+O NotifyKit separa essas responsabilidades. A aplicação cliente escolhe o
+canal por uma API única; a biblioteca organiza validação, templates, retry,
+agendamento, registro do resultado e extensibilidade em componentes pequenos.
 
 ## Arquitetura
 
@@ -209,31 +232,6 @@ await services.GetRequiredService<Notifier>()
     .SendAsync(Notification.For("telegram", "@chloe").Message("Olá!"));
 ```
 
-## Estrutura Maven equivalente / estrutura da solution
-
-O projeto entregue é `.NET`:
-
-```text
-pulse-notify.sln
-└── pulse-notify/
-    ├── pulse-notify.csproj        # net8.0, class library, NotifyKit.dll
-    └── src/
-        ├── Models/
-        ├── Abstractions/
-        ├── Channels/
-        ├── Strategies/
-        ├── Decorators/
-        ├── Handlers/
-        ├── Commands/
-        ├── Observers/
-        └── DependencyInjection/
-```
-
-API pública principal: `Notifier`, `Notification`, `NotificationBuilder`, `NotificationResult`,
-`INotificationChannel`, `INotificationHandler`, `INotificationObserver`,
-`IRetryBackoffPolicy`, `ChannelRegistry`, `INotificationChannelFactory`,
-`NotificationChannelFactory` e `AddNotifyKit`.
-
 ### Factory de canais (apoio)
 
 `NotificationChannelFactory` é um apoio arquitetural, não um dos seis padrões
@@ -248,41 +246,3 @@ services.AddSingleton<INotificationChannel, TelegramChannel>();
 Assim, a Factory resolve a criação dos defaults e o `ChannelRegistry` resolve
 o canal pelo nome; Strategy continua sendo o padrão responsável pelo algoritmo
 de envio.
-
-## Plano de trabalho
-
-**Parcial — 04/11, 30% (implementar nesta noite):** concluir os modelos,
-`NotificationBuilder`, `INotificationChannel`, quatro canais simulados, `ChannelRegistry`,
-`Notifier`, `ValidationHandler`, `NotificationCommand`, observer em memória e
-`AddNotifyKit`. Mostrar no vídeo: um envio Console e um Email, o diagrama de
-classes e a defesa Builder + Strategy/Command. O retry pode ser demonstrado
-isoladamente com `RetryDecorator` e backoff de atraso mínimo.
-
-**05/11:** adicionar testes xUnit para Builder, validação, registry e resultado.
-**06/11:** completar composição de Decorators e testes de retry/backoff.
-**07/11:** completar templates, handler de rate limit e testes da Chain.
-**08/11:** revisar agendamento/prioridade e separar dispatcher/fila se necessário.
-**09/11:** criar Demo console fora do artefato e exemplos de extensão Telegram.
-**10/11:** revisão de API pública, nullable, documentação XML e pacote NuGet local.
-**11/11:** gravar e editar o vídeo; ensaiar os três roteiros e validar clone limpo.
-**12/11:** publicar README, vídeo, pacote e entrega final.
-
-## Roteiro do vídeo (2–3 minutos por aluno)
-
-**Aluno 1 — Builder + Strategy:** apresentar o problema do construtor telescópico
-e mostrar `NotificationBuilder`; depois explicar que `INotificationChannel`
-representa algoritmos de transporte e que `IRetryBackoffPolicy` troca a política
-sem alterar o retry. Enfatizar OCP e a diferença entre escolher algoritmo e
-adicionar comportamento.
-
-**Aluno 2 — Decorator + Chain:** mostrar a composição `LoggingDecorator` +
-`RetryDecorator`, explicar que o componente interno mantém o mesmo contrato e
-que decorators são opcionais. Em seguida mostrar `ValidationHandler` e
-`TemplateHandler` em sequência, defendendo coesão, ordem explícita e interrupção
-por erro.
-
-**Aluno 3 — Command + Observer:** mostrar como `NotificationCommand` encapsula
-agendamento e execução e pode ser colocado numa fila no futuro. Depois explicar
-que observers recebem resultado sem acoplamento a histórico, auditoria ou
-métricas; finalizar com `InMemoryHistoryObserver` e um observer criado pelo
-cliente.

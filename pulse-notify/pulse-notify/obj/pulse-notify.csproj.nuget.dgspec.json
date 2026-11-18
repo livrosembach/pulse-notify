@@ -5,7 +5,7 @@
   },
   "projects": {
     "/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/pulse-notify.csproj": {
-      "version": "1.0.0",
+      "version": "0.1.0",
       "restore": {
         "projectUniqueName": "/Users/liviarosembacholiveira/GitHub/pulse-notify/pulse-notify/pulse-notify/pulse-notify.csproj",
         "projectName": "NotifyKit",
